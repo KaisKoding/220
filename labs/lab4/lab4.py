@@ -1,6 +1,9 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Derek Oriee
+lab4.py
+
+Certificate of Authenticity:
+I certify this assignment is entirely my own work
 """
 
 from graphics import *
@@ -34,7 +37,7 @@ def squares():
     instructions.draw(win)
 
     # builds a circle
-    shape = Circle(Point(50, 50), 20)
+    shape = Rectangle(Point(0, 0), Point(20, 20))
     shape.setOutline("red")
     shape.setFill("red")
     shape.draw(win)
@@ -49,6 +52,13 @@ def squares():
         dx = p.getX() - c.getX()
         dy = p.getY() - c.getY()
         shape.move(dx, dy)
+        clone = shape.clone()
+        clone.draw(win)
+
+    # Create end message
+    instructions.undraw()
+    endmessage = Text(inst_pt, "Click again to quit")
+    endmessage.draw(win)
 
     win.getMouse()
     win.close()
@@ -62,12 +72,42 @@ def rectangle():
          Print the perimeter and area of the rectangle.
     Formulas: area = (length)(width)   and    perimeter = 2(length+width)
     """
-    pass
+
+    # Create the graphics window
+    width = 400
+    height = 400
+    win = GraphWin("Rectangle", width, height)
+
+    # Give instructions
+    inst_pt = Point(width / 2, height - 10)
+    instructions = Text(inst_pt, "Please click on two points")
+    instructions.draw(win)
+
+    # Get user input for rectangle points
+    ui1 = win.getMouse()
+    ui1.draw(win)
+    ui2 = win.getMouse()
+    ui2.draw(win)
+
+    # Create the rectangle
+    rect = Rectangle(ui1, ui2)
+    rect.setFill("red")
+    rect.setOutline("red")
+    rect.draw(win)
+
+    # Calculate perimeter and area
+    length = ui2.getX() + ui1.getX()
+    width = ui2.getY() + ui1.getY()
+
+    print(length * width)
+
+
+    win.getMouse()
 
 
 def main():
-    squares()
-    # rectangle()
+    # squares()
+    rectangle()
     # circle()
     # pi2()
 
