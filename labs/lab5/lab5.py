@@ -168,10 +168,10 @@ def process_list():
 def another_series():
     terms = eval(input("Please input a number"))
 
+    total = 0
     for i in range(terms):
-        adder = (i + terms) % 2
-        print(i + adder, end="")
-
+        print(i % 3 * 2 + 2, end="")
+        total +=
         # Could there be an explanation for this one, please?
 
 
