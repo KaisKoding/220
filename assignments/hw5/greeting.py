@@ -1,5 +1,11 @@
 from graphics import *
 
+def greeting():
+    global valentines, point1
+    point1 = Point(width / 2, 375)
+    valentines = Text(point1, "Happy Valentines Day!")
+    valentines.draw(win)
+
 def heart():
     polygon1 = Polygon(Point((width / 2), 350), Point(75, 200), Point(335, 200))
     polygon1.setFill("red")
@@ -33,8 +39,14 @@ def arrow():
         arrow_base.draw(win)
 
         arrow_head = Polygon(Point((350 - subtractor) + i, (height / 2) - 10), Point((350 - subtractor) + i, (height / 2) + 20), Point((370 - subtractor) + i, (height / 2) + 5))
+        arrow_head.setOutline("black")
+        arrow_head.setFill("white")
         arrow_head.draw(win)
+        time.sleep(0.01)
 
+    valentines.undraw()
+    end_message = Text(point1, "Click to close")
+    end_message.draw(win)
 
 def main():
     global width, height, win
@@ -42,6 +54,7 @@ def main():
     height = 400
     win = GraphWin("Greeting", width, height)
 
+    greeting()
     heart()
     arrow()
     win.getMouse()
