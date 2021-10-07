@@ -35,4 +35,5 @@ def main():
     print("Average number of vehicles per road:", round(total_avg_cars, 2))
 
 
-main()
+if __name__ == "__main__":
+    main()
