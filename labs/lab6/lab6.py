@@ -62,6 +62,8 @@ def word_average():
 
 def pig_latin():
     text = input("Insert sentence: ")
+    sentence = text.lower().split()
+
 
 
 
