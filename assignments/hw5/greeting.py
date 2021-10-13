@@ -49,16 +49,14 @@ def arrow():
     end_message.draw(win)
 
 def main():
-    global width, height, win
     width = 400
     height = 400
     win = GraphWin("Greeting", width, height)
 
     greeting()
-    heart()
-    arrow()
+    heart =
+
     win.getMouse()
     win.close()
-
 
 main()
