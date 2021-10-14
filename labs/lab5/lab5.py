@@ -165,20 +165,11 @@ def process_list():
     print(x)
 
 
-def another_series():
-    terms = eval(input("Please input a number"))
-
-    total = 0
-    for i in range(terms):
-        print(i % 3 * 2 + 2, end="")
-        total +=
-        # Could there be an explanation for this one, please?
-
 
 def main():
     # target()
     # triangle()
-    # color_shape()
+    color_shape()
     # process_list()
     # another_series()
     pass
