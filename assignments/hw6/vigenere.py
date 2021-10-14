@@ -1,7 +1,6 @@
 """
 
 Name: Derek Kai Oriee
-chaos.py
 
 Certificate of Authenticity:
 I certify this assignment is entirely my own work
