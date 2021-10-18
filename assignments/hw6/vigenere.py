@@ -20,7 +20,6 @@ def main():
     user_input_pt = Point(265, 50)
     user_input = Entry(user_input_pt, 25)
     user_input.draw(win)
-    sentence = str(user_input.getText())
 
     key_message_pt = Point(75, 100)
     key_message = Text(key_message_pt, "Enter keyword")
@@ -28,13 +27,22 @@ def main():
     key_point = Point(265, 100)
     key = Entry(key_point, 25)
     key.draw(win)
+
+    encode_box = Rectangle(Point(150, 150), Point(250, 250))
+    encode_box.draw(win)
+    encode_text = Text(Point(200, 200), "Encode")
+    encode_text.draw(win)
+
+    win.getMouse()
+    encode_text.undraw()
+    encode_box.undraw()
+
+    sentence = str(user_input.getText())
     key_text = str(key.getText())
 
     key_ordinal = []
     cipher_message = []
     encoded_message = ""
-
-    win.getMouse()
 
     for i in key_text:
         key_ordinal.append(ord(i) - 97)
@@ -49,7 +57,7 @@ def main():
     result_message = Text(result_message_pt, "Resulting Message")
     result_message.draw(win)
 
-    vigenere_pt = Point(100, 100)
+    vigenere_pt = Point(200, 325)
     vigenere = Text(vigenere_pt, encoded_message)
     vigenere.draw(win)
 
