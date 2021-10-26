@@ -22,8 +22,8 @@ def weighted_average(in_file_name, out_file_name):
         for i in range(0, len(numbers), 2):
             weight = int(numbers[i])
             grade = int(numbers[i + 1])
-            weights = weights + weight
-            grades = grades + (weight * grade)
+            weights = round(weights + weight, 2)
+            grades = round(grades + (weight * grade), 2)
 
         if weights != 100:
             print("Error: the weights are less than 100.")
