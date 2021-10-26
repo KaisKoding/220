@@ -82,7 +82,7 @@ def encode_better():
 def main():
     # cash_conversion()
     encode()
-    encode_better()
+    #encode_better()
     pass
 
 

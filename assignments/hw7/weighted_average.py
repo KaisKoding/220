@@ -10,6 +10,7 @@ def weighted_average(in_file_name, out_file_name):
     grades_file = open(in_file_name, "r")
     grades_list = str(grades_file.read())
     grades_list = grades_list.split("\n")
+    output = open(out_file_name, "w")
 
     class_grade = 0
     for line in grades_list:
@@ -26,12 +27,12 @@ def weighted_average(in_file_name, out_file_name):
             grades = round(grades + (weight * grade), 2)
 
         if weights != 100:
-            print("Error: the weights are less than 100.")
+            print("Error: the weights are less than 100.", file=output)
 
         else:
             avg_file = open(out_file_name, "w")
             avg = grades / 100
-            avg_file.write(name + ":" + str(avg))
+            print(name + ":" + str(avg), file=output)
 
             class_grade = class_grade + avg
 
